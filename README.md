@@ -12,8 +12,12 @@ To write a program for error Detection using Cyclic Redundancy Check (CRC-16 bit
 5] Give polynomial values and the generated polynomial is obtained, and by other means arraive	at the desired output which uses the error detection technique. 6] Thus the output polynomial is obtained through this technique.
 
 # PROGRAM:
-#include<stdio.h> #include<string.h> #define Nstrlen(g) char t[128],cs[128],g[]="111";
-int a,e,c; voidxor()
+```
+#include<stdio.h>
+#include<string.h>
+#define Nstrlen(g) char t[128],cs[128],g[]="111";
+int a,e,c;
+voidxor()
 {
 for(c=1;c<N;c++) cs[c]=((cs[c]==g[c])?'0':'1');
 }
@@ -32,24 +36,32 @@ while(e<=a+N-1);
 }
 void main()
 {
-printf("\n Enter poly:"); scanf("%s",t);
-printf("\nGen poly is : %s",g); a=strlen(t);
+printf("\n Enter poly:");
+scanf("%s",t);
+printf("\nGen poly is : %s",g);
+a=strlen(t);
 for(e=a;e<a+N-1;e++) t[e]='0';
-printf("\nModfied t[u] :%s",t); crc();
-printf("\nChecksum is:%s",cs); for(e=a;e<a+N-1;e++) t[e]=cs[e-a];
-printf("\nFinal code word is:%s",t); printf("\nTest error detection 0(yes) 1(no)?:"); scanf("%d",&e);
+printf("\nModfied t[u] :%s",t);
+crc();
+printf("\nChecksum is:%s",cs);
+for(e=a;e<a+N-1;e++) t[e]=cs[e-a];
+printf("\nFinal code word is:%s",t);
+printf("\nTest error detection 0(yes) 1(no)?:");
+scanf("%d",&e);
 if(e==0)
 {
-printf("Enter position where is to inserted"); scanf("%d",&e);
+printf("Enter position where is to inserted");
+scanf("%d",&e);
 t[e]=(t[e]=='0')?'1':'0';
 printf("erroneous data :%s\n",t);
 }
 crc();
 for(e=0;(e<N-1)&&(cs[e]!='1');e++) if(e<N-1)
-printf("Error detected"); else
+printf("Error detected");
+else
 printf("no error detected");
 }
- 
+ ```
 # OUTPUT:
 <img width="892" height="469" alt="image" src="https://github.com/user-attachments/assets/204bbecb-c268-4ded-8266-7beaa492670c" />
 
